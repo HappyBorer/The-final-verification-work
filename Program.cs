@@ -21,7 +21,7 @@ string[] SearchDesiredLines(string[] arrayLines, int limit)
     
     for (int i = 0; i < arrayLines.Length; i++)
     {
-        if (arrayLines[i].Length <= sizeLimit)
+        if (arrayLines[i].Length <= limit)
         {
             sizeCounter++;
         }
