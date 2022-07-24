@@ -15,9 +15,47 @@ string[] FillingArray(string[] array)
     }
     return array;
 }
+string[] SearchDesiredLines(string[] arrayLines)
+{
+    int sizeCounter = 0;
+    int sizeLimit = 3;
+    for (int i = 0; i < arrayLines.Length; i++)
+    {
+        if (arrayLines[i].Length <= sizeLimit)
+        {
+            sizeCounter++;
+        }
+    }
+    string[] arrayWithResult = new string[sizeCounter];
+    int count = 0;
+    if (sizeCounter != 0)
+    {
+        for (int i = 0; i < arrayLines.Length; i++)
+        {
+
+            if (arrayLines[i].Length <= sizeLimit)
+            {
+                arrayWithResult[count] = arrayLines[i];
+                count++;
+            }
+        }
+        return arrayWithResult;
+    }
+    else
+    {
+        string[] arrayEmptyLine = { String.Empty };
+        return arrayEmptyLine;
+    }
+}
 // My code.
+
 int length = Input("Введите размер массива: ");
 string[] arrayOfLines = new string[length];
 
 arrayOfLines = FillingArray(arrayOfLines);
+
+string[] arrayResult = SearchDesiredLines(arrayOfLines);
+
+
+
 
