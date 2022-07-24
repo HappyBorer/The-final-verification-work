@@ -47,15 +47,32 @@ string[] SearchDesiredLines(string[] arrayLines, int limit)
         return arrayEmptyLine;
     }
 }
+
+void ConclusionArray(string[] array)
+{
+    for (int i = 0; i < array.Length; i++)
+    {
+        if(i < array.Length - 1)
+        {
+            Console.Write($"[{array[i]}], ");
+        }
+        else
+        {
+            Console.WriteLine($"[{array[i]}].");
+        }
+    }
+}
 // My code.
 
 int length = Input("Введите размер массива: ");
 string[] arrayOfLines = new string[length];
 
 arrayOfLines = FillingArray(arrayOfLines);
+
+ConclusionArray(arrayOfLines);
 int sizeLimit = 3;
 string[] arrayResult = SearchDesiredLines(arrayOfLines, sizeLimit);
 
-
+ConclusionArray(arrayResult);
 
 
